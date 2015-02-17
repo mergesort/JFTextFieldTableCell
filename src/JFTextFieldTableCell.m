@@ -105,7 +105,7 @@ CGFloat const JFTextFieldTableCellLeftViewWidth = 15.0f;
     _textField.textColor = [UIColor blackColor];
     _textField.backgroundColor = [UIColor whiteColor];
     _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    _textField.font = [UIFont regularFontOfSize:16.0f];
+    _textField.font = [UIFont systemFontOfSize:16.0f];
     [self.contentView addSubview:_textField];
 
     _editStateIndicatorView = [[UIView alloc] init];
