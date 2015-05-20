@@ -8,16 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - JFTextField
-
-/**
- This subclass exists only to override canPerformAction:withSender:
- */
-@interface JFTextField : UITextField
-
-@end
-
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - JFTextFieldTableCell Interface
@@ -27,7 +17,7 @@
     UITextFieldDelegate
 >
 
-@property (readonly) JFTextField *textField;
+@property (readonly) UITextField *textField;
 @property UIEdgeInsets textFieldInsets;
 
 @property CGFloat leftViewWidth;

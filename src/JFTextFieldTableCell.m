@@ -15,22 +15,13 @@
 CGFloat const JFTextFieldTableCellLeftViewWidth = 15.0f;
 
 
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - JFTextField Interface
-
-@interface JFTextField ()
-
-@property BOOL canPerformSystemEditingActions;
-
-@end
-
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
 @interface JFTextFieldTableCell ()
 
-@property (readwrite) JFTextField *textField;
+@property (readwrite) UITextField *textField;
 
 @property (nonatomic, copy) void (^nextTextFieldBlock)(UITextField *);
 @property (nonatomic, copy) void (^textFieldBeganEditingBlock)(UITextField *);
@@ -96,10 +87,9 @@ CGFloat const JFTextFieldTableCellLeftViewWidth = 15.0f;
     self.separatorInset = UIEdgeInsetsZero;
 
     _leftViewWidth = JFTextFieldTableCellLeftViewWidth;
-    _canPerformSystemEditingActions = YES;
     _maxCharacterCount = 0;
 
-    _textField = [[JFTextField alloc] init];
+    _textField = [[UITextField alloc] init];
     _textField.delegate = self;
     _textField.leftViewMode = UITextFieldViewModeAlways;
     _textField.textColor = [UIColor blackColor];
@@ -126,12 +116,6 @@ CGFloat const JFTextFieldTableCellLeftViewWidth = 15.0f;
 {
     _actionButton = actionButton;
     [self setNeedsLayout];
-}
-
-- (void)setCanPerformSystemEditingActions:(BOOL)canPerformSystemEditingActions
-{
-    _canPerformSystemEditingActions = canPerformSystemEditingActions;
-    _textField.canPerformSystemEditingActions = _canPerformSystemEditingActions;
 }
 
 
@@ -273,23 +257,6 @@ CGFloat const JFTextFieldTableCellLeftViewWidth = 15.0f;
 - (UIEdgeInsets)layoutMargins
 {
     return UIEdgeInsetsZero;
-}
-
-@end
-
-
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - JFTextField
-
-@implementation JFTextField
-
-
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - UIMenuController
-
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
-{
-    return _canPerformSystemEditingActions;
 }
 
 @end
