@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'JFTextFieldTableCell'
-  spec.version      = '1.0'
+  spec.version      = '1.1'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/mergesort/JFTextFieldTableCell'
   spec.author       =  { 'Joe Fabisevich' => 'github@fabisevi.ch' }
